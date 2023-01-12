@@ -1,4 +1,5 @@
 ---
+type: Post
 title: Change me!
 date: 2022-03-11
 ---

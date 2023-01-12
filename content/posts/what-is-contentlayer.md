@@ -1,4 +1,5 @@
 ---
+type: Post
 title: What is Contentlayer?
 date: 2022-02-22
 ---
