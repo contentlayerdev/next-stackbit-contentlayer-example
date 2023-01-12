@@ -1,5 +1,5 @@
 {
-  "name": "next-contentlayer-example",
+  "name": "next-contentlayer-stackbit-example",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,10 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "contentlayer": "latest",
+    "contentlayer": "^0.2.10-dev.1",
     "date-fns": "2.29.3",
     "next": "13.0.2",
-    "next-contentlayer": "latest",
+    "next-contentlayer": "^0.2.10-dev.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
