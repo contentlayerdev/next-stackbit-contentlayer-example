@@ -2,7 +2,7 @@ import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
 const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: `posts/**/*.md`,
+  filePathPattern: `**/*.md`,
   fields: {
     title: {
       type: "string",
@@ -24,6 +24,6 @@ const Post = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-  contentDirPath: "content",
+  contentDirPath: "content/posts",
   documentTypes: [Post],
 });
