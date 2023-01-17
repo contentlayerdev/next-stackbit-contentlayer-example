@@ -21,7 +21,7 @@ export async function getStaticProps({ params }) {
 
 const PostLayout = ({ post }: { post: Post }) => {
   return (
-    <>
+    <div>
       <Head>
         <title>{post.title}</title>
       </Head>
@@ -34,7 +34,7 @@ const PostLayout = ({ post }: { post: Post }) => {
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
       </article>
-    </>
+    </div>
   )
 }
 
