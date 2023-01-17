@@ -7,6 +7,7 @@ const stackbitConfig: Stackbit.RawConfig = {
   ssgName: "nextjs",
   pagesDir: "content/pages",
   models: { Post },
+  pageLayoutKey: "type",
   customContentReload: true,
 }
 
