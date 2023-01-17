@@ -8,7 +8,7 @@ const documentTypes = stackbitConfigToDocumentTypes(stackbitConfig, {
       computedFields: {
         id: {
           type: "string",
-          resolve: (doc) => `content/pages/posts/${doc._raw.sourceFilePath}`,
+          resolve: (doc) => `content/${doc._raw.sourceFilePath}`,
         },
         url: {
           type: "string",
