@@ -1,29 +1,18 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files"
+import { makeSource } from "contentlayer/source-files"
+import { stackbitConfigToDocumentTypes } from "@contentlayer/experimental-source-files-stackbit"
+import stackbitConfig from "./stackbit.config"
 
-const Post = defineDocumentType(() => ({
-  name: "Post",
-  filePathPattern: `**/*.md`,
-  fields: {
-    title: {
-      type: "string",
-      description: "The title of the post",
-      required: true,
-    },
-    date: {
-      type: "date",
-      description: "The date of the post",
-      required: true,
+const documentTypes = stackbitConfigToDocumentTypes(stackbitConfig, {
+  documentTypes: {
+    Post: {
+      computedFields: {
+        url: {
+          type: "string",
+          resolve: (doc) => doc._raw.flattenedPath.replace(/^pages\//, "/"),
+        },
+      },
     },
   },
-  computedFields: {
-    url: {
-      type: "string",
-      resolve: (doc) => `/posts/${doc._raw.flattenedPath}`,
-    },
-  },
-}))
-
-export default makeSource({
-  contentDirPath: "content/pages/posts",
-  documentTypes: [Post],
 })
+
+export default makeSource({ contentDirPath: "content", documentTypes })
