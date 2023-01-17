@@ -21,18 +21,25 @@ export async function getStaticProps({ params }) {
 
 const PostLayout = ({ post }: { post: Post }) => {
   return (
-    <div>
+    <div data-sb-object-id={post.id}>
       <Head>
         <title>{post.title}</title>
       </Head>
       <article className="max-w-xl py-8 mx-auto">
         <div className="mb-8 text-center">
-          <time dateTime={post.date} className="mb-1 text-xs text-gray-600 dark:text-slate-500">
+          <time
+            dateTime={post.date}
+            className="mb-1 text-xs text-gray-600 dark:text-slate-500"
+            data-sb-field-path="date"
+          >
             {format(parseISO(post.date), "LLLL d, yyyy")}
           </time>
-          <h1>{post.title}</h1>
+          <h1 data-sb-field-path="title">{post.title}</h1>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
+        <div
+          dangerouslySetInnerHTML={{ __html: post.body.html }}
+          data-sb-field-path="markdown_content"
+        />
       </article>
     </div>
   )
