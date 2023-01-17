@@ -6,6 +6,10 @@ const documentTypes = stackbitConfigToDocumentTypes(stackbitConfig, {
   documentTypes: {
     Post: {
       computedFields: {
+        id: {
+          type: "string",
+          resolve: (doc) => `content/pages/posts/${doc._raw.sourceFilePath}`,
+        },
         url: {
           type: "string",
           resolve: (doc) => doc._raw.flattenedPath.replace(/^pages\//, "/"),
