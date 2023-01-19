@@ -18,7 +18,7 @@ const Post = defineDocumentType(() => ({
   computedFields: {
     id: {
       type: 'string',
-      resolve: (doc) => `/content/pages/${doc._raw.sourceFilePath}`,
+      resolve: (doc) => `content/pages/${doc._raw.sourceFilePath}`,
     },
     url: {
       type: 'string',
