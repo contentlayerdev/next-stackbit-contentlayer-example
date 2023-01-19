@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from 'next/link'
 
 function ContentlayerIcon() {
   return (
@@ -8,7 +8,7 @@ function ContentlayerIcon() {
       viewBox="0 0 22 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-auto w-7"
+      className="w-5 h-auto"
     >
       <path
         fillRule="evenodd"
@@ -31,6 +31,7 @@ function StackbitLogo() {
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="Stackbit"
+      className="w-auto h-4"
     >
       <path
         d="M41.5717 8.50469C41.5717 6.29343 39.955 4.72344 37.3469 4.72344C35.234 4.72344 33.7217 5.68779 33.7217 7.27867C33.7217 11.6864 44.9893 8.11404 44.9893 15.8854C44.9893 19.615 41.7289 21.728 37.5558 21.728C34.0583 21.728 31.1468 20.1863 30.0535 17.3387L33.0178 14.3731C33.0178 17.007 34.7377 18.6728 37.5558 18.6728C39.767 18.6728 41.4157 17.6556 41.4157 16.0131C41.4157 11.5525 30.1481 15.1262 30.1481 7.50962C30.1481 3.9888 33.3826 1.66821 37.3469 1.66821C40.9095 1.66821 43.3935 3.37334 44.364 5.70744L41.5717 8.50469Z"
@@ -78,25 +79,38 @@ function StackbitLogo() {
 
 function Logos() {
   return (
-    <Link href="/" className="inline-flex items-center justify-center space-x-4">
-      <span>
+    <div className="inline-flex items-center justify-center space-x-4">
+      <a
+        href="https://www.stackbit.com/"
+        className="transition-all duration-300 hover:opacity-75"
+        target="_blank"
+      >
         <StackbitLogo />
-      </span>
+      </a>
       <span className="font-bold">+</span>
-      <span className="inline-flex items-center">
-        <span className="mr-2">
+      <a
+        href="https://www.contentlayer.dev/"
+        className="inline-flex items-center transition-all duration-300 hover:opacity-75"
+        target="_blank"
+      >
+        <span className="mr-1">
           <ContentlayerIcon />
         </span>
-        <span className="text-2xl font-bold">Contentlayer</span>
-      </span>
-    </Link>
+        <span className="font-bold">Contentlayer</span>
+      </a>
+    </div>
   )
 }
 
 export function Header() {
   return (
-    <header className="flex justify-center p-8">
-      <Logos />
+    <header className="p-6 border-b dark:border-gray-600">
+      <Link href="/" className="transition-all duration-300 hover:opacity-75">
+        <h1 className="text-2xl font-bold text-center">Visual Editing for Next.js</h1>
+      </Link>
+      <div className="flex justify-center mt-3">
+        <Logos />
+      </div>
     </header>
   )
 }

@@ -17,7 +17,7 @@ function PostCard(post: Post) {
           {post.title}
         </Link>
       </h2>
-      <time dateTime={post.date} className="block mb-2 text-xs text-gray-600 dark:text-slate-500">
+      <time dateTime={post.date} className="block mb-2 text-xs text-gray-600 dark:text-slate-400">
         {format(parseISO(post.date), 'LLLL d, yyyy')}
       </time>
       <div className="text-sm" dangerouslySetInnerHTML={{ __html: post.body.html }} />
@@ -28,8 +28,6 @@ function PostCard(post: Post) {
 export default function Home({ posts }: { posts: Post[] }) {
   return (
     <div className="max-w-xl py-8 mx-auto">
-      <h1 className="mb-8 text-3xl font-bold text-center">Recent Posts</h1>
-
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}

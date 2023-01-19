@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
+import Link from 'next/link'
 
 export async function getStaticPaths() {
   const paths: string[] = allPosts.map((post) => post.url)
@@ -25,12 +26,15 @@ const PostLayout = ({ post }: { post: Post }) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <article className="max-w-xl py-8 mx-auto">
+      <article className="max-w-xl py-12 mx-auto">
         <div className="mb-8 text-center">
-          <time dateTime={post.date} className="mb-1 text-xs text-gray-600 dark:text-slate-500">
+          <time
+            dateTime={post.date}
+            className="block mb-2 text-sm text-gray-600 dark:text-slate-400"
+          >
             {format(parseISO(post.date), 'LLLL d, yyyy')}
           </time>
-          <h1>{post.title}</h1>
+          <h1 className="text-4xl">{post.title}</h1>
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
       </article>
