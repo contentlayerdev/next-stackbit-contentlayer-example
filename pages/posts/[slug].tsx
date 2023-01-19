@@ -22,7 +22,7 @@ export async function getStaticProps({ params }) {
 
 const PostLayout = ({ post }: { post: Post }) => {
   return (
-    <div>
+    <div data-sb-object-id={post.id}>
       <Head>
         <title>{post.title}</title>
       </Head>
@@ -34,7 +34,9 @@ const PostLayout = ({ post }: { post: Post }) => {
           >
             {format(parseISO(post.date), 'LLLL d, yyyy')}
           </time>
-          <h1 className="text-4xl">{post.title}</h1>
+          <h1 className="text-4xl" data-sb-field-path="title">
+            {post.title}
+          </h1>
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
       </article>
