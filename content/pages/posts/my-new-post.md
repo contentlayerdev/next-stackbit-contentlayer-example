@@ -1,6 +1,6 @@
 ---
 type: Post
-title: My New post
+title: This will change instantly!
 date: '2023-01-17'
 ---
-Hello world!
+It works for body content, too!
