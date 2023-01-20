@@ -1,6 +1,6 @@
 ---
 type: Post
-title: THIS IS AMAZING!!!
+title: Change Me!
 date: '2023-03-11'
 ---
 
